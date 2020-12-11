@@ -1,0 +1,11 @@
+﻿@model Vidly_App.ViewModel.RandomMovieViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@foreach (var movie in Model.Movie)
+{
+    <li class="mt-20">
+        @movie.Name
+    </li>
+}
