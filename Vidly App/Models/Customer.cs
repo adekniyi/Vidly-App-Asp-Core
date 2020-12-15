@@ -14,6 +14,7 @@ namespace Vidly_App.Models
         [StringLength(255)]
 
         public string Name { get; set; }
+        public DateTime? Birthday { get; set; }
         public bool IsSubcribedToNewsletter { get; set; }
         public MembershipType MembershipType { get; set; }
     }

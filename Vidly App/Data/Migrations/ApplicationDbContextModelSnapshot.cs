@@ -226,6 +226,9 @@ namespace Vidly_App.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime?>("Birthday")
+                        .HasColumnType("datetime2");
+
                     b.Property<bool>("IsSubcribedToNewsletter")
                         .HasColumnType("bit");
 
