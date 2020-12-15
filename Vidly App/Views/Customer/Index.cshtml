@@ -1,18 +1,35 @@
-﻿@model Vidly_App.ViewModel.RandomMovieViewModel
+﻿@model IEnumerable<Vidly_App.Models.Customer>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-@foreach (var customer in Model.Customer)
+@if (!Model.Any())
 {
-<li class="mt-5">
-    @*@Html.ActionLink(customer.Name, "Details", "Customers", new
-        {
-            id = customer.Id
-        }, null);*@
-    <a asp-controller="Customer"
-       asp-action="Details"
-       asp-route-id= "@customer.Id">@customer.Name</a>
-</li>
+    <p>We don't have any customers yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Discount</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-controller="Customer"
+                           asp-action="Details"
+                           asp-route-id="@customer.Id">@customer.Name</a>
+                    </td>
+                    <td>
+                        @customer.MembershipType.DiscountRate%
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
