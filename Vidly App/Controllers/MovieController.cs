@@ -79,10 +79,21 @@ namespace Vidly_App.Controllers
              return NotFound();
         }
 
-        [Route("Movies/Edit")]
+        [Route("Movies/Edit/{id}")]
         public ActionResult Edit(int id)
         {
-            return Content($"id = {id}");
+            var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
+
+            if (movie == null)
+                return NotFound();
+
+            var viewModel = new MovieViewModel
+            {
+                Movie = movie,
+                Genres = _context.Genres.ToList()
+            };
+
+            return View("New", viewModel);
         }
 
         [Route("Movies/New")]
@@ -101,7 +112,18 @@ namespace Vidly_App.Controllers
         [Route("Movies/Create")]
         public ActionResult Create(Movie movie)
         {
-            _context.Movies.Add(movie);
+            if(movie.Id == 0)
+                _context.Movies.Add(movie);
+            else
+            {
+                var movieInDb = _context.Movies.Single(c => c.Id == movie.Id);
+                movieInDb.Name = movie.Name;
+                movieInDb.NumberInStock = movie.NumberInStock;
+                movieInDb.ReleasedDate = movie.ReleasedDate;
+                movieInDb.GenreId = movie.GenreId;
+                
+            }
+
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Movie");
