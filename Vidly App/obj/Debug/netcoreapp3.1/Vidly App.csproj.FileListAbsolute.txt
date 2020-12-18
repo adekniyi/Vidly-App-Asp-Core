@@ -169,3 +169,5 @@ C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Vie
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Index.cshtml.g.cs
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Random.cshtml.g.cs
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_NavBar.cshtml.g.cs
+C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Details.cshtml.g.cs
+C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerForm.cshtml.g.cs

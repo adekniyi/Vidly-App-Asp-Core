@@ -247,6 +247,21 @@ namespace Vidly_App.Data.Migrations
                     b.ToTable("Customers");
                 });
 
+            modelBuilder.Entity("Vidly_App.Models.Genre", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Genre");
+                });
+
             modelBuilder.Entity("Vidly_App.Models.MembershipType", b =>
                 {
                     b.Property<int>("Id")
@@ -268,7 +283,36 @@ namespace Vidly_App.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MembershipType");
+                    b.ToTable("MembershipTypes");
+                });
+
+            modelBuilder.Entity("Vidly_App.Models.Movie", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DateAdded")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("GenreId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NumberInStock")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ReleasedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GenreId");
+
+                    b.ToTable("Movies");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -327,6 +371,13 @@ namespace Vidly_App.Data.Migrations
                     b.HasOne("Vidly_App.Models.MembershipType", "MembershipType")
                         .WithMany()
                         .HasForeignKey("MembershipTypeId");
+                });
+
+            modelBuilder.Entity("Vidly_App.Models.Movie", b =>
+                {
+                    b.HasOne("Vidly_App.Models.Genre", "Genre")
+                        .WithMany()
+                        .HasForeignKey("GenreId");
                 });
 #pragma warning restore 612, 618
         }

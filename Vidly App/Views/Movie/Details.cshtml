@@ -1,0 +1,14 @@
+﻿@model Vidly_App.Models.Movie
+@{
+    ViewData["Title"] = Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@Model.Name</h1>
+<ul>
+    <li>Genre: @Model.Genre.Name</li>
+    <li>Released Date: @Model.ReleasedDate.DayOfWeek, @Model.ReleasedDate.ToString("M"), @Model.ReleasedDate.Year</li>
+    <li>Date Added: @Model.DateAdded.DayOfWeek, @Model.DateAdded.ToString("M"), @Model.DateAdded.Year</li>
+    <li>Number In Stock: @Model.NumberInStock</li>
+</ul>
+

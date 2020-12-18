@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Vidly_App.Data;
 using Vidly_App.Models;
 using Vidly_App.ViewModel;
 
@@ -10,6 +12,12 @@ namespace Vidly_App.Controllers
 {
     public class MovieController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public MovieController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
         // GET: Movies/random
         [Route("Movies/Random")]
         public ActionResult Random()
@@ -38,17 +46,37 @@ namespace Vidly_App.Controllers
         [Route("Movies")]
         public ActionResult Index()
         {
-            var movies = new List<Movie>
-            {
-              new Movie { Name = "Shark", Id = 1 },
-              new Movie {Name = "Wall e" , Id = 2}
-            };
+            //var movies = new List<Movie>
+            //{
+            //  new Movie { Name = "Shark", Id = 1 },
+            //  new Movie {Name = "Wall e" , Id = 2}
+            //};
 
-            var viewModel = new RandomMovieViewModel
+            //var viewModel = new RandomMovieViewModel
+            //{
+            //    Movie = movies,
+            //};
+
+            var movies = _context.Movies.Include(c => c.Genre);
+
+            return View(movies);
+        }
+
+        [Route("Movies/Details/{id}")]
+        public ActionResult Details(int id)
+        {
+            var movie = _context.Movies.Include(c => c.Genre);
+
+
+            foreach(var oneMovie in movie)
             {
-                Movie = movies,
-            };
-            return View(viewModel);
+                if(oneMovie.Id == id)
+                {
+                    return View(oneMovie);
+                }
+            }
+
+             return NotFound();
         }
 
         [Route("Movies/Edit")]
