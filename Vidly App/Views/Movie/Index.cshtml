@@ -3,6 +3,9 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<h1>Movies</h1>
+<a asp-controller="Movie"
+   asp-action="New" class="btn btn-primary btn-group-lg mb-5">New Movie</a>
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -20,7 +23,7 @@
                        asp-route-id=" @movie.Id"> @movie.Name</a>
                 </td>
                 <td>
-                  @movie.Genre.Name
+                    @movie.Genre.Name
                 </td>
             </tr>
         }

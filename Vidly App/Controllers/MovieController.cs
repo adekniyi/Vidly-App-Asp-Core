@@ -84,6 +84,29 @@ namespace Vidly_App.Controllers
         {
             return Content($"id = {id}");
         }
+
+        [Route("Movies/New")]
+        public ActionResult New()
+        {
+            var Genre = _context.Genres;
+            var viewModel = new MovieViewModel
+            {
+                Genres = Genre
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [Route("Movies/Create")]
+        public ActionResult Create(Movie movie)
+        {
+            _context.Movies.Add(movie);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Movie");
+        }
+
         [Route("movies/released/{{year}}/{{month:regex(\\d{2}):range(1,12)}}")]
         public ActionResult ByReleaseDate(int year, int month)
         {
