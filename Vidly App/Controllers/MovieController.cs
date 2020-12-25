@@ -87,9 +87,8 @@ namespace Vidly_App.Controllers
             if (movie == null)
                 return NotFound();
 
-            var viewModel = new MovieViewModel
+            var viewModel = new MovieViewModel(movie)
             {
-                Movie = movie,
                 Genres = _context.Genres.ToList()
             };
 
@@ -109,9 +108,24 @@ namespace Vidly_App.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         [Route("Movies/Create")]
         public ActionResult Create(Movie movie)
         {
+            if(!ModelState.IsValid)
+            {
+                var viewModel = new MovieViewModel(movie)
+                {
+                    Id = movie.Id,
+                    NumberInStock = movie.NumberInStock,
+                    GenreId = movie.GenreId,
+                    ReleasedDate = movie.ReleasedDate,
+                    Name = movie.Name,
+                    Genres = _context.Genres.ToList()
+                };
+
+                return View("New", viewModel);
+            }
             if(movie.Id == 0)
                 _context.Movies.Add(movie);
             else

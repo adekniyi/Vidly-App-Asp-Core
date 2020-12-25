@@ -161,9 +161,6 @@ C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\ru\Micros
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Index.cshtml.g.cs
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Details.cshtml.g.cs
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Index.cshtml.g.cs
@@ -172,3 +169,9 @@ C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Vie
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Details.cshtml.g.cs
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerForm.cshtml.g.cs
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Movie\New.cshtml.g.cs
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.MvcApplicationPartsAssemblyInfo.cache
