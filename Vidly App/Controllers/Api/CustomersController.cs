@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 //using System.Web.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -24,41 +25,45 @@ namespace Vidly_App.Controllers.Api
 
         public IEnumerable<CustomerDto> GetCustomers()
         {
-            var customer = _context.Customers.ToList();
+            var customer = _context.Customers.ToList().Select(Mapper.Map<Customer,CustomerDto>);
 
 
             return customer;
         }
 
         [Route("{id}")]
-        public Customer GetCustomer(int id)
+        public CustomerDto GetCustomer(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if (customer == null)
                 throw new System.Web.Http.HttpResponseException(System.Net.HttpStatusCode.NotFound);
 
-            return customer;
+            
+
+            return Mapper.Map<Customer, CustomerDto>(customer);
         }
 
         [HttpPost]
-        public Customer CreateCustomer(Customer customer)
+        public CustomerDto CreateCustomer(CustomerDto customerDto)
         {
             if(!ModelState.IsValid)
             {
                 throw new System.Web.Http.HttpResponseException(System.Net.HttpStatusCode.BadRequest);
             }
 
+            var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
             _context.Customers.Add(customer);
 
             _context.SaveChanges();
+            customerDto.Id = customer.Id;
 
-            return customer;
+            return customerDto;
         }
 
         [HttpPut]
         [Route("{id}")]
-        public Customer UpdateCustomer(int id, Customer customer)
+        public CustomerDto UpdateCustomer(int id, CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
             {
@@ -69,14 +74,16 @@ namespace Vidly_App.Controllers.Api
             if(customerInDb == null)
                 throw new System.Web.Http.HttpResponseException(System.Net.HttpStatusCode.NotFound);
 
-            customerInDb.IsSubcribedToNewsletter = customer.IsSubcribedToNewsletter;
-            customerInDb.MembershipTypeId = customer.MembershipTypeId;
-            customerInDb.Name = customer.Name;
-            customerInDb.Birthday = customer.Birthday;
+            Mapper.Map(customerDto, customerInDb);
+
+            //customerInDb.IsSubcribedToNewsletter = customer.IsSubcribedToNewsletter;
+            //customerInDb.MembershipTypeId = customer.MembershipTypeId;
+            //customerInDb.Name = customer.Name;
+            //customerInDb.Birthday = customer.Birthday;
 
             _context.SaveChanges();
 
-            return customerInDb;
+            return customerDto;
         }
 
         [HttpDelete]

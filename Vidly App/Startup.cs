@@ -12,6 +12,11 @@ using Vidly_App.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+//using AutoMapper;
+using Vidly_App.Areas;
+using Newtonsoft.Json.Serialization;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using System.Web.Http;
 
 namespace Vidly_App
 {
@@ -35,7 +40,13 @@ namespace Vidly_App
             services.AddControllersWithViews();
             services.AddRazorPages();
 
+            AutoMapper.Mapper.Initialize(c => c.AddProfile<MappingProfile>());
+
             services.AddMvc(option => option.EnableEndpointRouting = false);
+
+            var config = new HttpConfiguration();
+            var settings = config.Formatters.JsonFormatter.SerializerSettings;
+            settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +62,7 @@ namespace Vidly_App
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
+
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
