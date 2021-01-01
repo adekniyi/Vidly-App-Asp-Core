@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 //using System.Web.Http;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Vidly_App.Data;
 using Vidly_App.Dtos;
@@ -25,7 +26,10 @@ namespace Vidly_App.Controllers.Api
 
         public IEnumerable<CustomerDto> GetCustomers()
         {
-            var customer = _context.Customers.ToList().Select(Mapper.Map<Customer,CustomerDto>);
+            var customer = _context.Customers
+                .Include(c => c.MembershipType)
+                .ToList()
+                .Select(Mapper.Map<Customer,CustomerDto>);
 
 
             return customer;

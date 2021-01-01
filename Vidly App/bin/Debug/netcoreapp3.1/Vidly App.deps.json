@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v3.1": {
       "Vidly App/1.0.0": {
         "dependencies": {
+          "BundlerMinifier.Core": "3.2.449",
           "Microsoft.AspNet.WebApi.Core": "5.2.7",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "3.1.7",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.7",
@@ -33,6 +34,8 @@
           "Microsoft.EntityFrameworkCore.Tools": "3.1.7",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.4",
           "AutoMapper": "4.1.0",
+          "bootbox": "4.2.0",
+          "jquery.datatables": "1.10.15",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -313,6 +316,32 @@
         },
         "compile": {
           "lib/net45/AutoMapper.dll": {}
+        }
+      },
+      "bootbox/4.2.0": {
+        "dependencies": {
+          "jQuery": "1.8.0"
+        }
+      },
+      "BundlerMinifier.Core/3.2.449": {
+        "dependencies": {
+          "NUglify": "1.5.14",
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/dotnet-bundle.dll": {
+            "assemblyVersion": "3.2.449.0",
+            "fileVersion": "3.2.449.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/dotnet-bundle.dll": {}
+        }
+      },
+      "jQuery/1.8.0": {},
+      "jquery.datatables/1.10.15": {
+        "dependencies": {
+          "jQuery": "1.8.0"
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.7": {
@@ -1558,6 +1587,17 @@
         },
         "compile": {
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
+        }
+      },
+      "NUglify/1.5.14": {
+        "runtime": {
+          "lib/netstandard2.0/NUglify.dll": {
+            "assemblyVersion": "1.5.14.0",
+            "fileVersion": "1.5.14.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/NUglify.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -4192,6 +4232,34 @@
       "path": "automapper/4.1.0",
       "hashPath": "automapper.4.1.0.nupkg.sha512"
     },
+    "bootbox/4.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KgRkOS3Zt1Ln/EcAb6lmOSOz2e3qIW3SP/9I8bA0TNPTUxRZbjxBG8v9JLmx0g/4TR0bfjBzbfnoJUmAGQ+dxg==",
+      "path": "bootbox/4.2.0",
+      "hashPath": "bootbox.4.2.0.nupkg.sha512"
+    },
+    "BundlerMinifier.Core/3.2.449": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8ssF9o8PavO/YUh1rA/xz2qmNfm7FjC3UxkP7C8BMo2fvSodpWpeUB6/0ISRgq4U3T6+i7+WuAqlSLWHo3n/2w==",
+      "path": "bundlerminifier.core/3.2.449",
+      "hashPath": "bundlerminifier.core.3.2.449.nupkg.sha512"
+    },
+    "jQuery/1.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-laDFQRJrIRHT0Z0GVYklMt3bE0iu0MZFJwHwg21kt3SHb7Bj8TdNiM3K+ZdK1DzB8ZxKy8z7NkJvwMas+dmHBw==",
+      "path": "jquery/1.8.0",
+      "hashPath": "jquery.1.8.0.nupkg.sha512"
+    },
+    "jquery.datatables/1.10.15": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9zRZ5zYafJHOwLU6sWoTM/agRx/dlu0HGQpGD/hEvqSEUJhSQjqJNTq77I97B+LCbh4eJrmNDS9PENiYY+0Isg==",
+      "path": "jquery.datatables/1.10.15",
+      "hashPath": "jquery.datatables.1.10.15.nupkg.sha512"
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.7": {
       "type": "package",
       "serviceable": true,
@@ -4807,6 +4875,13 @@
       "sha512": "sha512-qbXaB76XYUVLocLBs8Z9TS/ERGK2wm797feO+0JEPFvT7o7MRadOR77mqaSD4J1k8G+DlZQyq+MlkCuxrkr3ag==",
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
+    },
+    "NUglify/1.5.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LosWK9I+Ncd235gxr7qNm+CaKeUr5FoOWPvPC0bRrf+McDf8/pcH2k2pyK8o2PuSImKss+jgXDzIkCvC2GSqRA==",
+      "path": "nuglify/1.5.14",
+      "hashPath": "nuglify.1.5.14.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",

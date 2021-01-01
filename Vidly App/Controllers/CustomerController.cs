@@ -33,9 +33,10 @@ namespace Vidly_App.Controllers
             //    Customer = customer
             //};
 
-            var customer = _context.Customers.Include(c => c.MembershipType).ToList();
+            //var customer = _context.Customers.Include(c => c.MembershipType).ToList();
 
-            return View(customer);
+            //return View(customer);
+            return View();
         }
 
         [Route("Customers/New")]

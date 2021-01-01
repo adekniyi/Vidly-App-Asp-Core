@@ -38,6 +38,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "BundlerMinifier.Core": {
+              "target": "Package",
+              "version": "[3.2.449, )"
+            },
             "Microsoft.AspNet.WebApi.Core": {
               "target": "Package",
               "version": "[5.2.7, )"
@@ -73,6 +77,14 @@
             "automapper": {
               "target": "Package",
               "version": "[4.1.0, )"
+            },
+            "bootbox": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            },
+            "jquery.datatables": {
+              "target": "Package",
+              "version": "[1.10.15, )"
             }
           },
           "imports": [
