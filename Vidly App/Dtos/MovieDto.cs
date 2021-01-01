@@ -17,6 +17,8 @@ namespace Vidly_App.Dtos
         public DateTime ReleasedDate { get; set; }
         public DateTime DateAdded { get; set; }
 
+        public GenreDto Genre { get; set; }
+
         [Required]
         public string NumberInStock { get; set; }
 

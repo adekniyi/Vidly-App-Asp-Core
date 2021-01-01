@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Vidly_App.Data;
@@ -23,7 +24,10 @@ namespace Vidly_App.Controllers.Api
 
         public IEnumerable<MovieDto> GetMovies()
         {
-            return _context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>); ;
+            return _context.Movies
+                .Include(c =>c.Genre)
+                .ToList()
+                .Select(Mapper.Map<Movie, MovieDto>); ;
         }
 
         [Route("{id}")]

@@ -37,7 +37,8 @@
 {
     <script>
         $(document).ready(function () {
-            var table = $("#customers").DataTable({
+            var table = $("#customers").DataTable(
+            {
                 ajax: {
                     url: "/api/customers",
                     dataSrc: ""
