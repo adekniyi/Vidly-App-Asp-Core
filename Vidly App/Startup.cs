@@ -17,6 +17,7 @@ using Vidly_App.Areas;
 using Newtonsoft.Json.Serialization;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using System.Web.Http;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace Vidly_App
 {
@@ -42,7 +43,8 @@ namespace Vidly_App
 
             AutoMapper.Mapper.Initialize(c => c.AddProfile<MappingProfile>());
 
-            services.AddMvc(option => option.EnableEndpointRouting = false);
+            services.AddMvc(option => option.EnableEndpointRouting = false)
+                .AddMvcOptions(options => options.Filters.Add(new AuthorizeFilter()));
 
             var config = new HttpConfiguration();
             var settings = config.Formatters.JsonFormatter.SerializerSettings;
