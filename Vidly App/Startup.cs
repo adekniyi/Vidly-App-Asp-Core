@@ -18,6 +18,7 @@ using Newtonsoft.Json.Serialization;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using System.Web.Http;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Vidly_App
 {
@@ -36,15 +37,25 @@ namespace Vidly_App
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //    .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                    .AddRoles<IdentityRole>() //Line that can help you
+                    .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
 
             AutoMapper.Mapper.Initialize(c => c.AddProfile<MappingProfile>());
 
-            services.AddMvc(option => option.EnableEndpointRouting = false)
-                .AddMvcOptions(options => options.Filters.Add(new AuthorizeFilter()));
+            services.AddMvc(option => {
+                option.EnableEndpointRouting = false;
+                var policy = new AuthorizationPolicyBuilder()
+                                .RequireAuthenticatedUser()
+                                .Build();
+                option.Filters.Add(new AuthorizeFilter(policy));
+            }).AddXmlSerializerFormatters();
+
+            //.AddMvcOptions(options => options.Filters.Add(new AuthorizeFilter()));
 
             var config = new HttpConfiguration();
             var settings = config.Formatters.JsonFormatter.SerializerSettings;

@@ -57,9 +57,14 @@ namespace Vidly_App.Controllers
             //    Movie = movies,
             //};
 
-            var movies = _context.Movies.Include(c => c.Genre);
+            //var movies = _context.Movies.Include(c => c.Genre);
 
-            return View(movies);
+            if(User.IsInRole("CanManageMovies"))
+               return View("List");
+            else
+               return View("ReadOnlyView");
+
+
         }
 
         [Route("Movies/Details/{id}")]
