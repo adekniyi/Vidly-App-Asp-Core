@@ -22,10 +22,10 @@ namespace Vidly_App.Controllers
     public class AccountController : Controller
     {
 
-        private SignInManager<IdentityUser> _signInManager;
-        private Microsoft.AspNetCore.Identity.UserManager<IdentityUser> _userManager;
+        private SignInManager<ApplicationUser> _signInManager;
+        private Microsoft.AspNetCore.Identity.UserManager<ApplicationUser> _userManager;
 
-        public AccountController(Microsoft.AspNetCore.Identity.UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public AccountController(Microsoft.AspNetCore.Identity.UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;

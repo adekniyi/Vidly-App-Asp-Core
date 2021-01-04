@@ -192,10 +192,14 @@ C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\System.Web.Http.Owin.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Administration\CreateRole.cshtml.g.cs
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Movie\List.cshtml.g.cs
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Movie\ReadOnlyView.cshtml.g.cs
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\EntityFramework.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Administration\ListRoles.cshtml.g.cs
