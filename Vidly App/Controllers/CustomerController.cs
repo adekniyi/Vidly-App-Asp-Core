@@ -7,9 +7,13 @@ using Microsoft.EntityFrameworkCore;
 using Vidly_App.Data;
 using Vidly_App.Models;
 using Vidly_App.ViewModel;
+using Microsoft.AspNetCore.Authorization;
+
+
 
 namespace Vidly_App.Controllers
 {
+    [AllowAnonymous]
     public class CustomerController : Controller
     {
         private ApplicationDbContext _context;

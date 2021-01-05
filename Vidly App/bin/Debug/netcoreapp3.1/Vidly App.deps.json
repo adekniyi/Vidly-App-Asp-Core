@@ -43,6 +43,8 @@
           "Microsoft.Owin.Host.SystemWeb": "4.1.1",
           "Microsoft.Owin.Security": "4.1.1",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.4",
+          "OwinRequestScopeContext": "1.0.1",
+          "System.Web.Http.Common": "4.0.20126.16343",
           "AutoMapper": "4.1.0",
           "bootbox": "4.2.0",
           "jquery.datatables": "1.10.15",
@@ -1852,6 +1854,20 @@
           "lib/net40/Owin.dll": {}
         }
       },
+      "OwinRequestScopeContext/1.0.1": {
+        "dependencies": {
+          "Owin": "1.0.0"
+        },
+        "runtime": {
+          "lib/NET45/OwinRequestScopeContext.dll": {
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
+          }
+        },
+        "compile": {
+          "lib/NET45/OwinRequestScopeContext.dll": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -2836,6 +2852,17 @@
           "Microsoft.NETCore.Platforms": "2.1.2",
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0"
+        }
+      },
+      "System.Web.Http.Common/4.0.20126.16343": {
+        "runtime": {
+          "lib/net40/System.Web.Http.Common.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.20126.16343"
+          }
+        },
+        "compile": {
+          "lib/net40/System.Web.Http.Common.dll": {}
         }
       },
       "System.Xml.ReaderWriter/4.3.0": {
@@ -5297,6 +5324,13 @@
       "path": "owin/1.0.0",
       "hashPath": "owin.1.0.0.nupkg.sha512"
     },
+    "OwinRequestScopeContext/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bx3TcqNviBUzfArOPKKYnA1CI7Y4s97IAZfgAX1xmcifKK6dyJ52cyOs/LXcLyM0Yo9d26RR1TuC9lsSpVwFUQ==",
+      "path": "owinrequestscopecontext/1.0.1",
+      "hashPath": "owinrequestscopecontext.1.0.1.nupkg.sha512"
+    },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -6031,6 +6065,13 @@
       "sha512": "sha512-Z6YfyYTCg7lOZjJzBjONJTFKGN9/NIYKSxhU5GRd+DTwHSZyvWp1xuI5aR+dLg+ayyC5Xv57KiY4oJ0tMO89fQ==",
       "path": "system.threading.timer/4.3.0",
       "hashPath": "system.threading.timer.4.3.0.nupkg.sha512"
+    },
+    "System.Web.Http.Common/4.0.20126.16343": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3tybnaxSQAWu2aLSAh+7PRZ8Cw4f/DIECPJZ5yBcnm5sQKjr95zViCasYH3p6Z1hxATSTmlecvCcvlt/FDy+8w==",
+      "path": "system.web.http.common/4.0.20126.16343",
+      "hashPath": "system.web.http.common.4.0.20126.16343.nupkg.sha512"
     },
     "System.Xml.ReaderWriter/4.3.0": {
       "type": "package",

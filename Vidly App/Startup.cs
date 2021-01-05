@@ -41,8 +41,9 @@ namespace Vidly_App
             //    .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
-                options.Password.RequiredLength = 10;
-                options.Password.RequiredUniqueChars = 3;
+                options.SignIn.RequireConfirmedAccount = true;
+                //options.Password.RequiredLength = 10;
+                //options.Password.RequiredUniqueChars = 3;
             }).AddEntityFrameworkStores<ApplicationDbContext>();
               //.AddRoles<IdentityRole>() //Line that can help you\
 

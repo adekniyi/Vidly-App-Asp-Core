@@ -1679,6 +1679,18 @@
           "lib/net40/Owin.dll": {}
         }
       },
+      "OwinRequestScopeContext/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/NET45/OwinRequestScopeContext.dll": {}
+        },
+        "runtime": {
+          "lib/NET45/OwinRequestScopeContext.dll": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
         "runtimeTargets": {
@@ -3326,6 +3338,15 @@
         },
         "compile": {
           "ref/netstandard1.2/System.Threading.Timer.dll": {}
+        }
+      },
+      "System.Web.Http.Common/4.0.20126.16343": {
+        "type": "package",
+        "compile": {
+          "lib/net40/System.Web.Http.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Web.Http.Common.dll": {}
         }
       },
       "System.Xml.ReaderWriter/4.3.0": {
@@ -6093,6 +6114,19 @@
         "lib/net40/Owin.dll",
         "owin.1.0.0.nupkg.sha512",
         "owin.nuspec"
+      ]
+    },
+    "OwinRequestScopeContext/1.0.1": {
+      "sha512": "bx3TcqNviBUzfArOPKKYnA1CI7Y4s97IAZfgAX1xmcifKK6dyJ52cyOs/LXcLyM0Yo9d26RR1TuC9lsSpVwFUQ==",
+      "type": "package",
+      "path": "owinrequestscopecontext/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/NET45/OwinRequestScopeContext.dll",
+        "lib/NET45/OwinRequestScopeContext.xml",
+        "owinrequestscopecontext.1.0.1.nupkg.sha512",
+        "owinrequestscopecontext.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -10440,6 +10474,19 @@
         "system.threading.timer.nuspec"
       ]
     },
+    "System.Web.Http.Common/4.0.20126.16343": {
+      "sha512": "3tybnaxSQAWu2aLSAh+7PRZ8Cw4f/DIECPJZ5yBcnm5sQKjr95zViCasYH3p6Z1hxATSTmlecvCcvlt/FDy+8w==",
+      "type": "package",
+      "path": "system.web.http.common/4.0.20126.16343",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/System.Web.Http.Common.dll",
+        "lib/net40/System.Web.Http.Common.xml",
+        "system.web.http.common.4.0.20126.16343.nupkg.sha512",
+        "system.web.http.common.nuspec"
+      ]
+    },
     "System.Xml.ReaderWriter/4.3.0": {
       "sha512": "GrprA+Z0RUXaR4N7/eW71j1rgMnEnEVlgii49GZyAjTH7uliMnrOU3HNFBr6fEDBCJCIdlVNq9hHbaDR621XBA==",
       "type": "package",
@@ -10714,6 +10761,8 @@
       "Microsoft.Owin.Host.SystemWeb >= 4.1.1",
       "Microsoft.Owin.Security >= 4.1.1",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.4",
+      "OwinRequestScopeContext >= 1.0.1",
+      "System.Web.Http.Common >= 4.0.20126.16343",
       "automapper >= 4.1.0",
       "bootbox >= 4.2.0",
       "jquery.datatables >= 1.10.15"
@@ -10831,6 +10880,14 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[3.1.4, )"
+          },
+          "OwinRequestScopeContext": {
+            "target": "Package",
+            "version": "[1.0.1, )"
+          },
+          "System.Web.Http.Common": {
+            "target": "Package",
+            "version": "[4.0.20126.16343, )"
           },
           "automapper": {
             "target": "Package",
@@ -11034,6 +11091,26 @@
       "warningLevel": 1,
       "message": "Package 'Owin 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
       "libraryId": "Owin",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'OwinRequestScopeContext 1.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "OwinRequestScopeContext",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Web.Http.Common 4.0.20126.16343' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "System.Web.Http.Common",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.1"
       ]

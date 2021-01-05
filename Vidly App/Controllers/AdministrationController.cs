@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 //using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,7 @@ using Vidly_App.ViewModel;
 
 namespace Vidly_App.Controllers
 {
+    //[Authorize(Roles = "CanManageMovies")]
     public class AdministrationController : Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;
@@ -118,6 +120,87 @@ namespace Vidly_App.Controllers
 
 
             }
+        }
+
+
+       [HttpGet]
+        [Route("administration/EditUserInRole/{roleId}")]
+        public async Task<IActionResult> EditUserInRole(string roleId)
+        {
+            ViewBag.roleId = roleId;
+ 
+            var role = await roleManager.FindByIdAsync(roleId);
+
+            if (role == null)
+                return NotFound();
+
+            var model = new List<UserRoleViewModel>();
+
+            foreach(var user in userManager.Users)
+            {
+                var editRole = new UserRoleViewModel
+                {
+                    UserId = user.Id,
+                    UserName = user.UserName
+                };
+
+                if(await userManager.IsInRoleAsync(user,role.Name))
+                {
+                    editRole.IsSelected = true;
+                }else
+                {
+                    editRole.IsSelected = false;
+                }
+
+                model.Add(editRole);
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        [Route("administration/EditUserInRole/{roleId}")]
+        public async Task<IActionResult> EditUserInRole(List<UserRoleViewModel> model,string roleId)
+        {
+            var role = await roleManager.FindByIdAsync(roleId);
+
+            if (role == null)
+                return NotFound();
+
+
+            for(int i = 0; i < model.Count; i++)
+            {
+                var user = await userManager.FindByIdAsync(model[i].UserId);
+
+                IdentityResult result = null;
+
+                if(model[i].IsSelected && !(await userManager.IsInRoleAsync(user,role.Name)))
+                {
+                    result = await userManager.AddToRoleAsync(user, role.Name);
+                }
+                else if(!(model[i].IsSelected) && await userManager.IsInRoleAsync(user, role.Name))
+                {
+                    result = await userManager.RemoveFromRoleAsync(user, role.Name);
+                }
+                else
+                {
+                    continue;
+                }
+
+                if(result.Succeeded)
+                {
+                    if(i < (model.Count-1))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        return Redirect("https://localhost:5001/administration/EditRoles/" + roleId);
+                    }
+                }
+                
+            }
+
+             return Redirect("https://localhost:5001/administration/EditRoles/" + roleId);
         }
 
     }

@@ -199,8 +199,12 @@ C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Vie
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\EntityFramework.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Administration\ListRoles.cshtml.g.cs
+C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Administration\EditRole.cshtml.g.cs
+C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Administration\EditUserInRole.cshtml.g.cs
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\System.Web.Http.Common.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\OwinRequestScopeContext.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Administration\ListRoles.cshtml.g.cs
-C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Administration\EditRole.cshtml.g.cs
+C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Account\LogIn.cshtml.g.cs

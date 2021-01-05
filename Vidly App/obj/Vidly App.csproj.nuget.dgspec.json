@@ -114,6 +114,14 @@
               "target": "Package",
               "version": "[3.1.4, )"
             },
+            "OwinRequestScopeContext": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "System.Web.Http.Common": {
+              "target": "Package",
+              "version": "[4.0.20126.16343, )"
+            },
             "automapper": {
               "target": "Package",
               "version": "[4.1.0, )"

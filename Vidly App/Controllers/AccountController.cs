@@ -15,7 +15,11 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.Owin.Security;
+//using Microsoft.AspNetCore.Server.HttpSys;
+//using System.Net;
 //using System.Web.Mvc;
+
 
 namespace Vidly_App.Controllers
 {
@@ -31,7 +35,50 @@ namespace Vidly_App.Controllers
             _signInManager = signInManager;
         }
 
+        // GET: /Account/Login
+        [AllowAnonymous]
+        [Route("Account/Login")]
+        public ActionResult Login(string returnUrl)
+        {
+            ViewBag.ReturnUrl = returnUrl;
+            return View();
+        }
 
+
+        //
+        // POST: /Account/Login
+        [HttpPost]
+        [Route("Account/Login")]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            // This doesn't count login failures towards account lockout
+            // To enable password failures to trigger account lockout, change to shouldLockout: true
+            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            if (result.IsLockedOut)
+            {
+                return View("Lockout");
+            }
+            if (result.IsNotAllowed)
+            {
+                return View("Not Allowed");
+            }
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                return View(model);
+            }
+        }
 
 
         // GET: /Account/Register
@@ -81,9 +128,37 @@ namespace Vidly_App.Controllers
             return View(model);
         }
 
-        public IActionResult Index()
+
+        // POST: /Account/Logout
+        [HttpPost]
+        [Route("Account/Logout")]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Logout()
         {
-            return View();
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
+
+
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
     }
 }
+
+
+
+
+
+
+
+
+//private IAuthenticationManager AuthenticationManager
+//{
+//    get
+//    {
+//        return HttpContext.GetOwinContext().Authentication;
+//    }
+//}
