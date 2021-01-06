@@ -263,6 +263,18 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Core.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Authentication.Google/5.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.Google.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.Google.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Authorization/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -4542,6 +4554,21 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Core.xml",
         "microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
         "microsoft.aspnetcore.authentication.core.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Google/5.0.1": {
+      "sha512": "uXkeo9NtDlkXmNIqtLZ6tLtUFpMEfOI4rCTNAE9hsTj9cLexeMgiYv1Kp3bDNzAeDdpllx7KzsZjCnR5kIZqDw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.google/5.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net5.0/Microsoft.AspNetCore.Authentication.Google.dll",
+        "lib/net5.0/Microsoft.AspNetCore.Authentication.Google.xml",
+        "microsoft.aspnetcore.authentication.google.5.0.1.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.google.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authorization/2.2.0": {
@@ -11896,6 +11923,7 @@
       "Microsoft.AspNet.WebApi.Core >= 5.2.7",
       "Microsoft.AspNet.WebApi.Owin >= 5.2.7",
       "Microsoft.AspNetCore >= 2.2.0",
+      "Microsoft.AspNetCore.Authentication.Google >= 5.0.1",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 5.0.1",
       "Microsoft.AspNetCore.Http.Abstractions >= 2.2.0",
       "Microsoft.AspNetCore.Identity >= 2.2.0",
@@ -11990,6 +12018,10 @@
           "Microsoft.AspNetCore": {
             "target": "Package",
             "version": "[2.2.0, )"
+          },
+          "Microsoft.AspNetCore.Authentication.Google": {
+            "target": "Package",
+            "version": "[5.0.1, )"
           },
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",

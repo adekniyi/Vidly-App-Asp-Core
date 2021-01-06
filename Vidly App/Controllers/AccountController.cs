@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Owin.Security;
+using System.Security.Claims;
 //using Microsoft.AspNetCore.Server.HttpSys;
 //using System.Net;
 //using System.Web.Mvc;
@@ -38,11 +39,111 @@ namespace Vidly_App.Controllers
         // GET: /Account/Login
         [AllowAnonymous]
         [Route("Account/Login")]
-        public ActionResult Login(string returnUrl)
+        public async Task<ActionResult> Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
-            return View();
+            var logInViewModel = new LoginViewModel
+            {
+                ReturnUrl = returnUrl,
+                ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList()
+            };
+            return View(logInViewModel);
         }
+
+
+
+
+        //
+        // POST: /Account/ExternalLogin
+        [HttpPost]
+        [AllowAnonymous]
+        [Route("Account/ExternalLogin")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ExternalLogin(string provider, string returnUrl)
+        {
+            // Request a redirect to the external login provider
+            var redirectUrl =  Url.Action("ExternalLoginCallback", "Account", 
+                                            new { ReturnUrl = returnUrl });
+            var properties = _signInManager
+                .ConfigureExternalAuthenticationProperties(provider, redirectUrl);
+
+            return new ChallengeResult(provider, properties);
+        }
+
+        //
+        // GET: /Account/ExternalLoginCallback
+        [HttpGet]
+        [AllowAnonymous]
+        [Route("Account/ExternalLoginCallback")]
+        public async Task<ActionResult> ExternalLoginCallback(string returnUrl = null, string remoteError = null)
+        {
+            returnUrl = returnUrl ?? Url.Content("~/");
+
+
+            var loginViewModel = new LoginViewModel
+            {
+                ReturnUrl = returnUrl,
+                ExternalLogins = (await _signInManager
+                .GetExternalAuthenticationSchemesAsync()).
+                ToList()
+            };
+
+            if(remoteError != null)
+            {
+                ModelState.AddModelError(string.Empty, $"Error from external provider:{remoteError}");
+                return View("Login", loginViewModel);
+            }
+
+            var loginInfo = await _signInManager.GetExternalLoginInfoAsync();
+            if (loginInfo == null)
+            {
+                ModelState.AddModelError(string.Empty, $"Error loading external information");
+                return RedirectToAction("Login", loginViewModel);
+            }
+
+
+
+            // Sign in the user with this external login provider if the user already has a login
+            var result = await _signInManager.ExternalLoginSignInAsync(loginInfo.LoginProvider,loginInfo.ProviderKey ,isPersistent: false, bypassTwoFactor:true);
+            if (result.Succeeded)
+            {
+                return LocalRedirect(returnUrl);     
+            }
+            else
+            {
+                var email = loginInfo.Principal.FindFirstValue(ClaimTypes.Email);
+
+                if(email != null)
+                {
+                    var user = await _userManager.FindByEmailAsync(email);
+
+                    if(user == null)
+                    {
+                         user = new ApplicationUser
+                        {
+                            UserName = loginInfo.Principal.FindFirstValue(ClaimTypes.Name),
+                            Email = loginInfo.Principal.FindFirstValue(ClaimTypes.Email),
+                        };
+                       
+                        await _userManager.CreateAsync(user);
+                    }
+
+                    await _userManager.AddLoginAsync(user, loginInfo);
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+
+                    return LocalRedirect(returnUrl);
+                }
+
+                ViewBag.ErrorTitle = $"Email claim not recieved from {loginInfo.LoginProvider}";
+                ViewBag.ErrorMessage = "Please confirm support on adekniyi@gmail.com";
+
+                return View("Login", loginViewModel);
+            }
+
+           // return View("Login", loginViewModel);
+        }
+
+
 
 
         //

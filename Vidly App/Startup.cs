@@ -19,6 +19,8 @@ using Microsoft.AspNetCore.Mvc.Formatters;
 using System.Web.Http;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Authorization;
+//using Microsoft.AspNetCore.Authentication;
+
 
 namespace Vidly_App
 {
@@ -59,7 +61,15 @@ namespace Vidly_App
                                 .RequireAuthenticatedUser()
                                 .Build();
                 option.Filters.Add(new AuthorizeFilter(policy));
+                //option.Filters.Add(typeof(RequireHttpsInProductionAttribute));
             }).AddXmlSerializerFormatters();
+
+            services.AddAuthentication()
+                .AddGoogle(options =>
+            {
+                options.ClientId = "659448695725-0liodb7sebk3d7mn6uhvbvqulcv2o4np.apps.googleusercontent.com";
+                options.ClientSecret = "2g2N3to_cT4cSUIXrLEcYWa2";
+            });
 
             //.AddMvcOptions(options => options.Filters.Add(new AuthorizeFilter()));
 

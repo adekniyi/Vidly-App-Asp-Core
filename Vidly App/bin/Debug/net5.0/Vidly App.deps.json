@@ -34,6 +34,7 @@
           "Microsoft.AspNet.WebApi.Core": "5.2.7",
           "Microsoft.AspNet.WebApi.Owin": "5.2.7",
           "Microsoft.AspNetCore": "2.2.0",
+          "Microsoft.AspNetCore.Authentication.Google": "5.0.1",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "5.0.1",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",
@@ -592,6 +593,17 @@
           "Microsoft.AspNetCore.Authentication.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Http": "2.2.0",
           "Microsoft.AspNetCore.Http.Extensions": "2.2.0"
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/5.0.1": {
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "5.0.1.0",
+            "fileVersion": "5.0.120.60107"
+          }
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.Google.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authorization/2.2.0": {
@@ -4912,6 +4924,13 @@
       "sha512": "sha512-XlVJzJ5wPOYW+Y0J6Q/LVTEyfS4ssLXmt60T0SPP+D8abVhBTl+cgw2gDHlyKYIkcJg7btMVh383NDkMVqD/fg==",
       "path": "microsoft.aspnetcore.authentication.core/2.2.0",
       "hashPath": "microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Google/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uXkeo9NtDlkXmNIqtLZ6tLtUFpMEfOI4rCTNAE9hsTj9cLexeMgiYv1Kp3bDNzAeDdpllx7KzsZjCnR5kIZqDw==",
+      "path": "microsoft.aspnetcore.authentication.google/5.0.1",
+      "hashPath": "microsoft.aspnetcore.authentication.google.5.0.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/2.2.0": {
       "type": "package",
