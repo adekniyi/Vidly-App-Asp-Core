@@ -11,7 +11,7 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
+//[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-Vidly_App-F5651B39-4A9B-4FA9-8BD7-B42EDF1809AF")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Vidly App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]

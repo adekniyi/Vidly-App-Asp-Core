@@ -21,11 +21,6 @@ C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
-C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
-C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
-C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -36,8 +31,6 @@ C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
-C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
@@ -57,13 +50,6 @@ C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\System.Di
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
-C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
-C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
-C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
-C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
-C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.TagHelpers.input.cache
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.TagHelpers.output.cache
@@ -168,7 +154,6 @@ C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Vie
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\System.Web.Http.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
-C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
@@ -204,7 +189,22 @@ C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Vie
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Administration\EditUserInRole.cshtml.g.cs
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\System.Web.Http.Common.dll
 C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\OwinRequestScopeContext.dll
-C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Razor\Views\Account\LogIn.cshtml.g.cs
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Server.Kestrel.Https.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Vidly App\Vidly App\obj\Debug\netcoreapp3.1\Vidly App.MvcApplicationPartsAssemblyInfo.cache
