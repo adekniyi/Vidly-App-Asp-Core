@@ -71,6 +71,13 @@ namespace Vidly_App
                 options.ClientSecret = "2g2N3to_cT4cSUIXrLEcYWa2";
             });
 
+            services.AddAuthentication()
+               .AddFacebook(options =>
+               {
+                   options.AppId = "431650278191112";
+                   options.AppSecret = "5a10e79ad11db463f4e39e7a454e7651";
+               });
+
             //.AddMvcOptions(options => options.Filters.Add(new AuthorizeFilter()));
 
             var config = new HttpConfiguration();
