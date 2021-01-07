@@ -318,6 +318,34 @@ namespace Vidly_App.Data.Migrations
                     b.ToTable("Movies");
                 });
 
+            modelBuilder.Entity("Vidly_App.Models.Rental", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int?>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateRented")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateReturned")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("MoviesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("MoviesId");
+
+                    b.ToTable("Rentals");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -387,6 +415,21 @@ namespace Vidly_App.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Genre");
+                });
+
+            modelBuilder.Entity("Vidly_App.Models.Rental", b =>
+                {
+                    b.HasOne("Vidly_App.Models.Customer", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerId");
+
+                    b.HasOne("Vidly_App.Models.Movie", "Movies")
+                        .WithMany()
+                        .HasForeignKey("MoviesId");
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("Movies");
                 });
 #pragma warning restore 612, 618
         }

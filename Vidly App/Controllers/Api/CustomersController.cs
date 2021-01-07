@@ -10,9 +10,11 @@ using Microsoft.AspNetCore.Mvc;
 using Vidly_App.Data;
 using Vidly_App.Dtos;
 using Vidly_App.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Vidly_App.Controllers.Api
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class CustomersController : ControllerBase
