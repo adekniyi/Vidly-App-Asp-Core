@@ -52,6 +52,7 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.1",
           "OwinRequestScopeContext": "1.0.1",
           "System.Web.Http.Common": "4.0.20126.16343",
+          "Twitter.Typeahead": "0.11.1",
           "bootbox": "4.2.0",
           "jquery.datatables": "1.10.15",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
@@ -352,7 +353,7 @@
       },
       "bootbox/4.2.0": {
         "dependencies": {
-          "jQuery": "1.8.0"
+          "jQuery": "1.10.2"
         }
       },
       "BundlerMinifier.Core/3.2.449": {
@@ -394,10 +395,10 @@
           }
         }
       },
-      "jQuery/1.8.0": {},
+      "jQuery/1.10.2": {},
       "jquery.datatables/1.10.15": {
         "dependencies": {
-          "jQuery": "1.8.0"
+          "jQuery": "1.10.2"
         }
       },
       "Microsoft.AspNet.Identity.Core/2.2.3": {
@@ -3120,6 +3121,11 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "Twitter.Typeahead/0.11.1": {
+        "dependencies": {
+          "jQuery": "1.10.2"
+        }
+      },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
         "compile": {
           "Microsoft.AspNetCore.Antiforgery.dll": {}
@@ -4825,12 +4831,12 @@
       "path": "humanizer.core/2.8.26",
       "hashPath": "humanizer.core.2.8.26.nupkg.sha512"
     },
-    "jQuery/1.8.0": {
+    "jQuery/1.10.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-laDFQRJrIRHT0Z0GVYklMt3bE0iu0MZFJwHwg21kt3SHb7Bj8TdNiM3K+ZdK1DzB8ZxKy8z7NkJvwMas+dmHBw==",
-      "path": "jquery/1.8.0",
-      "hashPath": "jquery.1.8.0.nupkg.sha512"
+      "sha512": "sha512-uPspgAZqsXYOwLW+Kf3uRxdFAyX1EiEd6AWJhCsnZNVsUJmEbsZSxA0P+ku6oAhHI682TOSwkbmmJPwFgdY5cA==",
+      "path": "jquery/1.10.2",
+      "hashPath": "jquery.1.10.2.nupkg.sha512"
     },
     "jquery.datatables/1.10.15": {
       "type": "package",
@@ -6581,6 +6587,13 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "Twitter.Typeahead/0.11.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rvLNWhljNZDvl/zFAghW/KlE0bRUzndkhMLxCoGkxph2h/kilGIIhqIXklcBH9S/gYeHTQ0VBnyiMk+6gPhhGw==",
+      "path": "twitter.typeahead/0.11.1",
+      "hashPath": "twitter.typeahead.0.11.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
       "type": "referenceassembly",

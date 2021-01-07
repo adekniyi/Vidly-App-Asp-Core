@@ -152,6 +152,10 @@
               "target": "Package",
               "version": "[4.0.20126.16343, )"
             },
+            "Twitter.Typeahead": {
+              "target": "Package",
+              "version": "[0.11.1, )"
+            },
             "bootbox": {
               "target": "Package",
               "version": "[4.2.0, )"

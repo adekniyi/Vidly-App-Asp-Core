@@ -22,7 +22,7 @@ namespace Vidly_App.ViewModel
         [Display(Name = "Number In Stock")]
         [NumberInStock]
         [Required]
-        public string? NumberInStock { get; set; }
+        public int? NumberInStock { get; set; }
 
         [Display(Name = "Genre")]
         [Required]

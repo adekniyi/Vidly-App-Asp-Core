@@ -18,7 +18,7 @@ namespace Vidly_App.Models
             if (movie.NumberInStock == null)
                 return new ValidationResult("The Number In Stock field is required.");
 
-            return (movie.NumberInStock == "0") ? new ValidationResult("The field Number in Stock must be between 1-20") : ValidationResult.Success;
+            return (movie.NumberInStock == 0) ? new ValidationResult("The field Number in Stock must be between 1-20") : ValidationResult.Success;
         }
     }
 }

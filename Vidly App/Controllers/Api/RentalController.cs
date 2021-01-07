@@ -62,9 +62,26 @@ namespace Vidly_App.Controllers.Api
                     DateRented = DateTime.Now
                 };
 
-                if(rental.DateReturned == null)
+                if(movie.NumberAvailable < movie.NumberInStock && movie.NumberAvailable > 0)
                 {
-                   //return movie.NumberAvailable - "1";
+                    if (rental.DateReturned == null)
+                    {
+                        movie.NumberAvailable -= 1;
+                    }
+                    else
+                    {
+                        movie.NumberAvailable += 1;
+                    }
+                }else if (movie.NumberAvailable == movie.NumberInStock && movie.NumberAvailable > 0)
+                {
+                    if (rental.DateReturned == null)
+                    {
+                        movie.NumberAvailable -= 1;
+                    }
+                }
+                else
+                {
+                    throw new NotImplementedException();
                 }
 
                 _context.Rentals.Add(rental);

@@ -1,0 +1,72 @@
+﻿
+@{ 
+    ViewBag.Title = "New Rental Form";
+}
+
+
+<form>
+    <div class="form-group">
+        <label>Customer</label>
+        <input id="customer" type="text" value="" class="form-control" />
+    </div> 
+    <div class="form-group">
+        <label>Movies</label>
+        <input type="text" value="" class="form-control" />
+    </div>
+    <button class="btn btn-primary">Submit</button>
+</form>
+5
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var vm = {};
+            $('#customer').autocomplete({
+               // minLength:2,
+                source: function (request, response) {
+                    $.ajax({
+                        url: "/api/customers",
+                        method: "get",
+                        contentType: "application/json;charset=utf-8",
+                        data: JSON.stringify({ term: request.term }),
+                        dataType: "json",
+                        success: function (data) {
+                           // console.log(data)
+                            response($.map(data, function (item) {
+                                return item.name;
+                                vm.customerId =item.customerId
+                                //console.log(item.Name)
+                            }))
+                        },
+                        error: function (err) {
+                            console.log(err);
+                        }
+                    });
+                },
+                select: function (e, i) {
+                    $('#customer').val(i.item.name);
+                },
+                minLength:1
+            })
+
+            //var customer = new Bloodhound({
+            //    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+            //    queryTokenizer: Bloodhound.tokenizers.whitespace,
+            //    remote: {
+            //        url: '/api/customers?query=%QUERY',
+            //        wildcard: '%QUERY'
+            //    }
+            //});
+            //$('#customer').typeahead({
+            //    minLength: 2,
+            //    highlight:true
+            //}, {
+            //    name: 'customer',
+            //    display: 'name',
+            //    source: customer
+            //});
+
+
+        });
+    </script>
+}

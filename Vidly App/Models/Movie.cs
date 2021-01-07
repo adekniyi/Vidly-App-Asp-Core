@@ -22,7 +22,7 @@ namespace Vidly_App.Models
         [Display(Name = "Number In Stock")]
         [NumberInStock]
         [Required]
-        public string NumberInStock { get; set; }
+        public int NumberInStock { get; set; }
         public Genre Genre { get; set; }
 
         [Display(Name = "Genre")]
@@ -31,7 +31,7 @@ namespace Vidly_App.Models
 
         [Display(Name = "Number Available")]
         [Required]
-        public string NumberAvailable { get; set; }
+        public int NumberAvailable { get; set; }
 
     }
 }
