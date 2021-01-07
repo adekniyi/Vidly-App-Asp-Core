@@ -29,5 +29,9 @@ namespace Vidly_App.Models
         [Required]
         public int GenreId { get; set; }
 
+        [Display(Name = "Number Available")]
+        [Required]
+        public string NumberAvailable { get; set; }
+
     }
 }

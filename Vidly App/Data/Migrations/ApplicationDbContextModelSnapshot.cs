@@ -304,6 +304,10 @@ namespace Vidly_App.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("NumberAvailable")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("NumberInStock")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
