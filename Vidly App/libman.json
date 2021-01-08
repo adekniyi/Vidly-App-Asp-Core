@@ -25,6 +25,10 @@
     {
       "library": "typeahead.js@0.11.1",
       "destination": "wwwroot/typeahead.js/"
+    },
+    {
+      "library": "toastr.js@2.1.4",
+      "destination": "wwwroot/css/toastr.js/"
     }
   ]
 }

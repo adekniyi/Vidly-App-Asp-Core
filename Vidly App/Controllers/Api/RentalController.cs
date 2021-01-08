@@ -55,34 +55,17 @@ namespace Vidly_App.Controllers.Api
             {
                 var movie = _context.Movies.SingleOrDefault(c => c.Id == movieId);
 
+                if (movie.NumberAvailable == 0)
+                    throw new System.Web.Http.HttpResponseException(System.Net.HttpStatusCode.BadRequest);
+
+                movie.NumberAvailable--;
+
                 rental = new Rental
                 {
                     Customer = customer,
                     Movies = movie,
                     DateRented = DateTime.Now
                 };
-
-                if(movie.NumberAvailable < movie.NumberInStock && movie.NumberAvailable > 0)
-                {
-                    if (rental.DateReturned == null)
-                    {
-                        movie.NumberAvailable -= 1;
-                    }
-                    else
-                    {
-                        movie.NumberAvailable += 1;
-                    }
-                }else if (movie.NumberAvailable == movie.NumberInStock && movie.NumberAvailable > 0)
-                {
-                    if (rental.DateReturned == null)
-                    {
-                        movie.NumberAvailable -= 1;
-                    }
-                }
-                else
-                {
-                    throw new NotImplementedException();
-                }
 
                 _context.Rentals.Add(rental);
                 _context.SaveChanges();

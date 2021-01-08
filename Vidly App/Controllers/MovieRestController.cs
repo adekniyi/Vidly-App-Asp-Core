@@ -8,13 +8,13 @@ using Vidly_App.Data;
 
 namespace Vidly_App.Controllers
 {
-    [Route("api/customers")]
+    [Route("api/movies")]
     [ApiController]
-    public class CustomerRestController : ControllerBase
+    public class MovieRestController : ControllerBase
     {
         private ApplicationDbContext _context;
 
-        public CustomerRestController(ApplicationDbContext context)
+        public MovieRestController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -26,7 +26,9 @@ namespace Vidly_App.Controllers
             try
             {
                 string term = HttpContext.Request.Query["term"].ToString();
-                var name = _context.Customers.Where(p => p.Name.Contains(term))
+                var name = _context.Movies.Where(p => p.Name.Contains(term))
+                    .Where(p=>p.NumberAvailable > 0)
+                    //.Select(p=>p.Id)
                     .Select(c => new { id = c.Id, value = c.Name })
                     .ToList();
                 return Ok(name);
